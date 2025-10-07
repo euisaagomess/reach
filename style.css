@@ -1,412 +1,266 @@
-/* =============================================================
-   PALETA DE CORES SUGERIDA
-   ============================================================= */
+/* ===== ESTILO GERAL ===== */
 :root {
-    /* Cores Primárias: Confiança e Ação */
-    --cor-primaria: #0077b6; /* Azul Escuro / Principal */
-    --cor-secundaria: #00b4d8; /* Azul Ciano / Destaque */
-    
-    /* Cores de Fundo e Texto: Clareza e Acessibilidade */
-    --cor-fundo-claro: #f0f8ff; /* Azul Claro Suave (quase branco) */
-    --cor-fundo-escuro: #03045e; /* Azul Marinho Profundo */
-    --cor-texto-principal: #333333; /* Texto escuro para leitura */
-    --cor-texto-claro: #ffffff; /* Texto branco */
-    
-    /* Cor de Destaque / Humanização */
-    --cor-destaque: #7b2cbf; /* Roxo Humanização */
+  --rosa: #f24296;
+  --fundo: #0a0e2a;
+  --branco: #ffffff;
+  --sombra: rgba(255, 255, 255, 0.1);
 }
 
-/* =============================================================
-   RESET E CONFIGURAÇÕES GLOBAIS
-   ============================================================= */
 * {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Poppins", sans-serif;
 }
 
 body {
-    font-family: 'Helvetica Neue', Arial, sans-serif;
-    color: var(--cor-texto-principal);
-    line-height: 1.6;
-    background-color: var(--cor-fundo-claro);
-    scroll-behavior: smooth;
+  background-color: var(--fundo);
+  color: var(--branco);
+  line-height: 1.6;
+  overflow-x: hidden;
 }
 
-h1, h2, h3 {
-    margin-bottom: 0.8em;
-    color: var(--cor-fundo-escuro); /* Títulos em azul escuro */
-    font-weight: 700;
-}
-
-h1 { font-size: 3em; }
-h2 { font-size: 2em; text-align: center; }
-h3 { font-size: 1.5em; }
-
-a {
-    text-decoration: none;
-    color: var(--cor-secundaria);
-}
-
-.section-padding {
-    padding: 60px 5%;
-}
-
-.bg-light-gray {
-    background-color: var(--cor-fundo-claro);
-}
-
-.bg-dark {
-    background-color: var(--cor-fundo-escuro);
-    color: var(--cor-texto-claro);
-}
-
-.bg-dark h2, .bg-dark p {
-    color: var(--cor-texto-claro);
-}
-
-/* =============================================================
-   NAVEGAÇÃO (HEADER & NAV)
-   ============================================================= */
+/* ===== CABEÇALHO ===== */
 header {
-    background-color: var(--cor-fundo-escuro);
-    color: var(--cor-texto-claro);
-    padding: 20px 0 100px 0;
+  background-color: #0e143a;
+  padding: 15px 40px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  box-shadow: 0 2px 10px var(--sombra);
+  position: sticky;
+  top: 0;
+  z-index: 1000;
 }
 
-nav {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 10px 5%;
+/* ===== LOGO ===== */
+.logo-container {
+  display: flex;
+  align-items: center;
+  gap: 12px;
 }
 
 .logo {
-    font-size: 1.5em;
-    font-weight: bold;
-    color: var(--cor-secundaria); /* Logo em ciano */
+  width: 45px;
+  height: auto;
+  object-fit: contain;
+  transition: transform 0.3s ease;
 }
 
-nav ul {
-    list-style: none;
-    display: flex;
-    gap: 25px;
+.logo:hover {
+  transform: scale(1.1);
 }
 
-nav ul a {
-    color: var(--cor-texto-claro);
-    transition: color 0.3s;
+.logo-container h1 {
+  font-size: 1.6rem;
+  letter-spacing: 2px;
+  color: var(--rosa);
+  animation: brilho 3s ease-in-out infinite;
 }
 
-nav ul a:hover {
-    color: var(--cor-secundaria);
+nav a {
+  color: var(--branco);
+  text-decoration: none;
+  margin: 0 15px;
+  font-weight: 500;
+  transition: color 0.3s;
 }
 
-.user-actions {
-    display: flex;
-    gap: 15px;
+nav a:hover {
+  color: var(--rosa);
 }
 
-/* Botões de Ação (CTAs) */
-.cta-button, .btn-primary, .btn-secondary, .btn-donate {
-    display: inline-block;
-    padding: 10px 25px;
-    border-radius: 5px;
-    text-transform: uppercase;
-    font-weight: 600;
-    transition: background-color 0.3s, transform 0.2s;
-    border: 2px solid transparent;
+/* ===== BOTÕES ===== */
+button,
+.btn {
+  background-color: var(--rosa);
+  color: var(--branco);
+  border: none;
+  border-radius: 8px;
+  padding: 10px 20px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 12px rgba(242, 66, 150, 0.3);
 }
 
-.cta-button {
-    background-color: var(--cor-primaria);
-    color: var(--cor-texto-claro);
-    border-color: var(--cor-primaria);
+button:hover,
+.btn:hover {
+  background-color: #ff5fac;
+  transform: scale(1.05);
 }
 
-.cta-button.secondary {
-    background-color: transparent;
-    color: var(--cor-secundaria);
-    border-color: var(--cor-secundaria);
+/* ===== SEÇÕES ===== */
+section {
+  padding: 60px 80px;
+  text-align: center;
 }
 
-.cta-button:hover {
-    background-color: var(--cor-destaque);
-    border-color: var(--cor-destaque);
-    transform: translateY(-2px);
+section h2 {
+  color: var(--rosa);
+  margin-bottom: 20px;
+  font-size: 2rem;
 }
 
-.cta-button.secondary:hover {
-    background-color: var(--cor-secundaria);
-    color: var(--cor-fundo-escuro);
+section p {
+  max-width: 800px;
+  margin: 0 auto 20px auto;
+  color: var(--branco);
+  font-size: 1rem;
 }
 
-/* Hero Section (Banner) */
-.hero-content {
-    text-align: center;
-    padding: 80px 5% 40px;
+/* ===== IMAGEM INICIAL ===== */
+#inicio {
+  position: relative;
+  text-align: center;
+  padding: 40px 0;
 }
 
-.hero-content h1 {
-    color: var(--cor-texto-claro);
-    font-size: 3.5em;
-    margin-bottom: 0.1em;
+#inicio img {
+  width: 90%;
+  max-width: 1000px;
+  border-radius: 16px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.5);
+  animation: fadeIn 2s ease forwards;
 }
 
-.hero-content h2 {
-    color: var(--cor-secundaria);
-    font-size: 1.8em;
-    font-weight: 400;
-    margin-bottom: 20px;
+#inicio h2 {
+  position: absolute;
+  top: 10%;
+  left: 50%;
+  transform: translateX(-50%);
+  color: white;
+  font-size: 2rem;
+  text-shadow: 0 0 12px rgba(242, 66, 150, 0.7);
 }
 
-.hero-content p {
-    color: rgba(255, 255, 255, 0.8);
-    margin-bottom: 30px;
+/* ===== CARDS ===== */
+.card {
+  background-color: #10163d;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+  margin: 20px auto;
+  padding: 20px;
+  max-width: 600px;
+  transition: transform 0.3s, box-shadow 0.3s;
 }
 
-.hero-content .cta-button {
-    margin: 0 10px;
+.card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 18px rgba(242, 66, 150, 0.3);
 }
 
-
-/* =============================================================
-   SEÇÃO SOBRE (ABOUT)
-   ============================================================= */
-.about-flex {
-    display: flex;
-    gap: 40px;
-    align-items: center;
-    max-width: 1200px;
-    margin: 0 auto;
+.card .icon {
+  font-size: 2rem;
+  margin-bottom: 10px;
 }
 
-.about-text {
-    flex: 2;
+/* ===== FORMULÁRIO ===== */
+form input,
+form textarea {
+  background-color: #10163d;
+  color: white;
+  border: none;
+  border-radius: 8px;
+  padding: 10px;
+  width: 60%;
+  max-width: 300px;
+  margin-bottom: 10px;
+  font-size: 1rem;
+  transition: box-shadow 0.3s;
 }
 
-.about-visual {
-    flex: 1;
-    text-align: center;
+form input:focus,
+form textarea:focus {
+  outline: none;
+  box-shadow: 0 0 8px rgba(242, 66, 150, 0.6);
 }
 
-.about-visual img {
-    max-width: 100%;
-    height: auto;
-    border-radius: 10px;
-    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
-}
-
-.mission-statement {
-    font-style: italic;
-    padding: 15px;
-    border-left: 5px solid var(--cor-destaque);
-    background-color: #f0f8ff;
-    margin: 20px 0;
-}
-
-/* =============================================================
-   SEÇÃO SERVIÇOS (SERVICES)
-   ============================================================= */
-.services-intro {
-    text-align: center;
-    margin-bottom: 40px;
-    max-width: 800px;
-    margin-left: auto;
-    margin-right: auto;
-}
-
-.services-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-    gap: 30px;
-    max-width: 1200px;
-    margin: 0 auto 40px auto;
-}
-
-.service-card {
-    background-color: var(--cor-texto-claro);
-    padding: 25px;
-    border-radius: 10px;
-    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.05);
-    border-top: 5px solid var(--cor-destaque);
-    transition: transform 0.3s;
-}
-
-.service-card:hover {
-    transform: translateY(-5px);
-}
-
-.service-card h3 {
-    color: var(--cor-destaque);
-}
-
-.target-audience {
-    max-width: 800px;
-    margin: 40px auto 0 auto;
-    padding: 20px;
-    border: 1px dashed var(--cor-secundaria);
-    border-radius: 8px;
-}
-
-.target-audience ul {
-    list-style: disc;
-    padding-left: 20px;
-}
-
-/* =============================================================
-   SEÇÃO DEPOIMENTOS (TESTIMONIALS)
-   ============================================================= */
-.testimonials-container {
-    display: flex;
-    gap: 30px;
-    justify-content: center;
-    max-width: 1000px;
-    margin: 0 auto;
-}
-
-.testimonial-box {
-    background-color: var(--cor-texto-claro);
-    padding: 30px;
-    border-radius: 10px;
-    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.1);
-    flex: 1;
-    border-left: 4px solid var(--cor-primaria);
-}
-
-.testimonial-box p {
-    font-style: italic;
-    margin-bottom: 15px;
-    color: var(--cor-texto-principal);
-}
-
-.testimonial-box cite {
-    display: block;
-    text-align: right;
-    font-weight: 600;
-    color: var(--cor-destaque);
-}
-
-/* =============================================================
-   SEÇÃO DOAÇÕES (DONATIONS)
-   ============================================================= */
-.donation-content {
-    text-align: center;
-    max-width: 800px;
-    margin: 0 auto;
-}
-
-.donation-content h2, .donation-content p {
-    color: var(--cor-texto-claro);
-}
-
-.donation-options {
-    margin-top: 30px;
-    display: flex;
-    justify-content: center;
-    gap: 20px;
-}
-
-.btn-donate {
-    background-color: var(--cor-secundaria);
-    color: var(--cor-fundo-escuro);
-}
-
-.btn-donate.secondary {
-    background-color: transparent;
-    color: var(--cor-texto-claro);
-    border: 2px solid var(--cor-texto-claro);
-}
-
-.btn-donate:hover {
-    background-color: var(--cor-destaque);
-    color: var(--cor-texto-claro);
-    border-color: var(--cor-destaque);
-}
-
-/* =============================================================
-   SEÇÃO CONTATO (CONTACT)
-   ============================================================= */
-.contact-flex {
-    display: flex;
-    gap: 60px;
-    max-width: 1000px;
-    margin: 0 auto;
-}
-
-.contact-form {
-    flex: 2;
-    background-color: var(--cor-fundo-claro);
-    padding: 30px;
-    border-radius: 10px;
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
-}
-
-.contact-form label {
-    display: block;
-    margin-bottom: 5px;
-    font-weight: 600;
-    color: var(--cor-primaria);
-}
-
-.contact-form input, .contact-form textarea {
-    width: 100%;
-    padding: 10px;
-    margin-bottom: 20px;
-    border: 1px solid #ccc;
-    border-radius: 5px;
-}
-
-.contact-info {
-    flex: 1;
-    padding-top: 20px;
-}
-
-.contact-info h3 {
-    color: var(--cor-destaque);
-}
-
-.contact-info ul {
-    list-style: none;
-    margin-top: 15px;
-}
-
-.contact-info li {
-    margin-bottom: 10px;
-}
-
-/* =============================================================
-   RODAPÉ (FOOTER)
-   ============================================================= */
+/* ===== RODAPÉ ===== */
 footer {
-    background-color: var(--cor-fundo-escuro);
-    color: rgba(255, 255, 255, 0.6);
-    text-align: center;
-    padding: 20px 0;
-    font-size: 0.9em;
+  background-color: #0e143a;
+  padding: 30px 0;
+  text-align: center;
+  color: var(--branco);
+  font-size: 0.9rem;
+  box-shadow: 0 -2px 10px var(--sombra);
 }
 
-/* =============================================================
-   RESPONSIVIDADE BÁSICA (Mobile First - Ajuste para Telas Maiores)
-   ============================================================= */
+footer a {
+  color: var(--rosa);
+  text-decoration: none;
+  transition: color 0.3s;
+}
+
+footer a:hover {
+  color: #ff79c6;
+}
+
+/* ===== ANIMAÇÕES ===== */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes brilho {
+  0% {
+    text-shadow: 0 0 8px rgba(242, 66, 150, 0.4);
+  }
+  50% {
+    text-shadow: 0 0 20px rgba(242, 66, 150, 0.9);
+  }
+  100% {
+    text-shadow: 0 0 8px rgba(242, 66, 150, 0.4);
+  }
+}
+
+.fade-in {
+  opacity: 0;
+  animation: fadeIn 1.5s ease forwards;
+}
+
+.fade-in-delay {
+  opacity: 0;
+  animation: fadeIn 1.5s ease forwards;
+  animation-delay: 0.6s;
+}
+
+/* ===== RESPONSIVIDADE ===== */
 @media (max-width: 768px) {
-    h1 { font-size: 2.5em; }
-    h2 { font-size: 1.8em; }
-    
-    nav ul {
-        display: none; /* Em um site real, você usaria um menu hambúrguer */
-    }
-    
-    .about-flex, .contact-flex, .testimonials-container, .donation-options {
-        flex-direction: column;
-    }
+  header {
+    flex-direction: column;
+    text-align: center;
+  }
 
-    .about-visual {
-        order: -1; /* Coloca a imagem acima do texto no mobile */
-        margin-bottom: 20px;
-    }
+  nav a {
+    display: inline-block;
+    margin: 8px;
+  }
 
-    .testimonial-box {
-        margin-bottom: 20px;
-    }
+  section {
+    padding: 40px 20px;
+  }
+
+  form input,
+  form textarea {
+    width: 80%;
+  }
+
+  #inicio h2 {
+    font-size: 1.5rem;
+  }
+
+  .logo {
+    width: 35px;
+  }
+
+  .logo-container h1 {
+    font-size: 1.3rem;
+  }
 }

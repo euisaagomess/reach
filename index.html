@@ -1,37 +1,87 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>REACH - Banco de Tempo Comunitário</title>
-    <link rel="stylesheet" href="style.css">
-    </head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>REACH - Banco de Tempo Comunitário</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
 <body>
+  <!-- ===== CABEÇALHO ===== -->
+  <header class="fade-in">
+    <div class="logo-container">
+      <img src="img/logo.png" alt="Logo REACH" class="logo" />
+      <h1>REACH</h1>
+    </div>
+    <nav>
+      <a href="#sobre">Sobre</a>
+      <a href="#objetivos">Objetivos</a>
+      <a href="#impacto">Impacto</a>
+      <a href="#contato">Contato</a>
+    </nav>
+  </header>
 
-    <header id="home">
-        <nav>
-            <div class="logo">REACH - Banco de Tempo</div>
-            <ul>
-                <li><a href="#home">Início</a></li>
-                <li><a href="#sobre">Sobre o Projeto</a></li>
-                <li><a href="#servicos">Serviços e Trocas</a></li>
-                <li><a href="#depoimentos">Histórias de Impacto</a></li>
-                <li><a href="#doacoes">Apoie a Causa</a></li>
-                <li><a href="#contato">Contato</a></li>
-            </ul>
-            <div class="user-actions">
-                <a href="cadastro.html" class="btn-primary">Cadastre-se</a>
-                <a href="login.html" class="btn-secondary">Entrar</a>
-            </div>
-        </nav>
+  <!-- ===== IMAGEM INICIAL ===== -->
+  <section id="inicio">
+    <img src="img/inicio-reach.png" alt="Imagem do Projeto REACH" class="fade-in" />
+  </section>
 
-         <div class="hero-content">
-            <h1>REACH: Resgatar, Educar, Amar, Cuidar, Humanizar.</h1>
-            <h2>Aqui, a moeda mais valiosa é o seu tempo.</h2>
-            <p>Conectando quem precisa de ajuda com quem deseja ajudar, sem envolver dinheiro.</p>
-            <a href="#servicos" class="cta-button">Começar a Trocar Tempo</a>
-            <a href="#sobre" class="cta-button secondary">Saiba Mais</a>
-        </div>
-    </header>
+  <!-- ===== SOBRE ===== -->
+  <section id="sobre" class="fade-in-delay">
+    <h2>Sobre o Projeto</h2>
+    <p>
+      O <strong>REACH</strong> — <em>Resgatar, Educar, Amar, Cuidar e Humanizar</em> — 
+      é um projeto que busca fortalecer laços comunitários por meio da solidariedade.
+      Nosso objetivo é criar um <strong>Banco de Tempo</strong>,
+<!-- ===== OBJETIVOS ===== -->
+  <section id="objetivos" class="fade-in-delay">
+    <h2>Objetivos do Projeto</h2>
 
-     
+    <div class="card">
+      <div class="icon">⏰</div>
+      <p>Desenvolver um site onde cada hora oferecida gera crédito para receber ajuda em outro serviço.</p>
+    </div>
+
+    <div class="card">
+      <div class="icon">🤝</div>
+      <p>Estimular a colaboração, solidariedade e igualdade dentro da comunidade.</p>
+    </div>
+
+    <div class="card">
+      <div class="icon">💡</div>
+      <p>Promover o acesso a serviços básicos sem envolver dinheiro, valorizando o tempo e o talento de cada pessoa.</p>
+    </div>
+  </section>
+
+  <!-- ===== IMPACTO ===== -->
+  <section id="impacto" class="fade-in-delay">
+    <h2>Impacto Esperado</h2>
+    <p>
+      O REACH pretende <strong>reduzir barreiras financeiras</strong> e
+      <strong>aproximar pessoas</strong> por meio da troca de tempo e conhecimento.
+      Com isso, fortalecemos a comunidade e incentivamos a empatia.
+    </p>
+  </section>
+
+  <!-- ===== CONTATO ===== -->
+  <section id="contato" class="fade-in-delay">
+    <h2>Entre em Contato</h2>
+    <p>Quer participar ou apoiar o projeto? Fale conosco!</p>
+    <form>
+      <input type="text" placeholder="Seu nome" required>
+      <br />
+      <input type="email" placeholder="Seu e-mail" required>
+      <br />
+      <textarea placeholder="Sua mensagem" rows="4" required></textarea>
+      <br />
+      <button class="btn">Enviar Mensagem</button>
+    </form>
+  </section>
+
+  <!-- ===== RODAPÉ ===== -->
+  <footer class="fade-in-delay">
+    <p>&copy; 2025 REACH - Resgatar, Educar, Amar, Cuidar e Humanizar.</p>
+    <p><a href="#inicio">Voltar ao topo ↑</a></p>
+  </footer>
+</body>
+</html>
