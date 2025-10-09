@@ -1,87 +1,179 @@
 <!DOCTYPE html>
-<html lang="pt-BR">
+<html lang="pt-br" data-theme="dark">
+
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>REACH - Banco de Tempo Comunitário</title>
-  <link rel="stylesheet" href="style.css" />
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>REACH - Banco de Tempo Comunitário</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.13.1/font/bootstrap-icons.min.css">
+    <link rel="stylesheet" href="style.css">
 </head>
+
 <body>
-  <!-- ===== CABEÇALHO ===== -->
-  <header class="fade-in">
-    <div class="logo-container">
-      <img src="img/logo.png" alt="Logo REACH" class="logo" />
-      <h1>REACH</h1>
-    </div>
-    <nav>
-      <a href="#sobre">Sobre</a>
-      <a href="#objetivos">Objetivos</a>
-      <a href="#impacto">Impacto</a>
-      <a href="#contato">Contato</a>
+
+    <header> <nav class="menu-desktop"> <ul class="menu menu-principal">
+                <li class="menu-item">
+                    <a href="#home" class="menu-link">
+                        <span class="menu-text">Home</span>
+                    </a>
+                </li>
+                <li class="menu-item">
+                    <a href="#servicos" class="menu-link">
+                        <span class="menu-text">Serviços</span>
+                    </a>
+                </li>
+                <li class="menu-item">
+                    <a href="#sobre" class="menu-link">
+                        <span class="menu-text">Sobre</span>
+                    </a>
+                </li>
+                <li class="menu-item">
+                    <a href="#contato" class="menu-link">
+                        <span class="menu-text">Contato</span>
+                    </a>
+                </li>
+            </ul>
+        </nav>
+
+        <div class="header-logo">
+            <a href="#home">
+                <img src="img/logo.png" alt="Logo REACH" class="logo">
+            </a>
+        </div>
+
+        <div class="header-toggle">
+            <i class="bi bi-sun" id="toggleTheme"></i>
+
+            <button id="menuHamburger" class="btn-menu-mobile">
+                <i class="bi bi-list"></i>
+            </button>
+        </div>
+
+    </header>
+
+    <nav class="menu-mobile menu menu-principal" id="menuMobile">
+        <ul class="menu-list">
+            <li class="menu-item">
+                <a href="#home" class="menu-link">
+                    <span class="menu-text"> Home </span>
+                </a>
+            </li>
+            <li class="menu-item">
+                <a href="#servicos" class="menu-link">
+                    <span class="menu-text"> Serviços </span>
+                </a>
+            </li>
+            <li class="menu-item">
+                <a href="#sobre" class="menu-link">
+                    <span class="menu-text"> Sobre </span>
+                </a>
+            </li>
+            <li class="menu-item">
+                <a href="#contato" class="menu-link">
+                    <span class="menu-text"> Contato </span>
+                </a>
+            </li>
+        </ul>
     </nav>
-  </header>
 
-  <!-- ===== IMAGEM INICIAL ===== -->
-  <section id="inicio">
-    <img src="img/inicio-reach.png" alt="Imagem do Projeto REACH" class="fade-in" />
-  </section>
+    <main id="home">
+        <section class="main-content">
+            <h1> Tempo por Tempo. Comunidade por Comunidade. </h1>
+            <p> O **REACH** é o Banco de Tempo Comunitário que conecta vizinhos. Troque suas habilidades por horas de ajuda em serviços do dia a dia, sem usar dinheiro. </p>
 
-  <!-- ===== SOBRE ===== -->
-  <section id="sobre" class="fade-in-delay">
-    <h2>Sobre o Projeto</h2>
-    <p>
-      O <strong>REACH</strong> — <em>Resgatar, Educar, Amar, Cuidar e Humanizar</em> — 
-      é um projeto que busca fortalecer laços comunitários por meio da solidariedade.
-      Nosso objetivo é criar um <strong>Banco de Tempo</strong>,
-<!-- ===== OBJETIVOS ===== -->
-  <section id="objetivos" class="fade-in-delay">
-    <h2>Objetivos do Projeto</h2>
+            <div class="botoes-home">
+                <a href="#servicos" class="btn-principal">Oferecer Tempo</a>
+                <a href="#servicos" class="btn-secundario">Solicitar Ajuda</a>
+            </div>
 
-    <div class="card">
-      <div class="icon">⏰</div>
-      <p>Desenvolver um site onde cada hora oferecida gera crédito para receber ajuda em outro serviço.</p>
-    </div>
+            <ul class="menu redes-sociais">
+                <li>
+                    <a href="#" class="menu-link" target="_blank">
+                        <i class="bi bi-instagram"></i>
+                    </a>
+                </li>
+                <li>
+                    <a href="https://wa.me/5511999999999" class="" target="_blank">
+                        <i class="bi bi-whatsapp"></i>
+                    </a>
+                </li>
+            </ul>
+        </section>
 
-    <div class="card">
-      <div class="icon">🤝</div>
-      <p>Estimular a colaboração, solidariedade e igualdade dentro da comunidade.</p>
-    </div>
+        <div class="imagem-home">
+            <img src="img/inicio-reach.png" alt="Ilustração de troca de serviços" class="img-main">
+        </div>
 
-    <div class="card">
-      <div class="icon">💡</div>
-      <p>Promover o acesso a serviços básicos sem envolver dinheiro, valorizando o tempo e o talento de cada pessoa.</p>
-    </div>
-  </section>
+    </main>
 
-  <!-- ===== IMPACTO ===== -->
-  <section id="impacto" class="fade-in-delay">
-    <h2>Impacto Esperado</h2>
-    <p>
-      O REACH pretende <strong>reduzir barreiras financeiras</strong> e
-      <strong>aproximar pessoas</strong> por meio da troca de tempo e conhecimento.
-      Com isso, fortalecemos a comunidade e incentivamos a empatia.
-    </p>
-  </section>
+    <section class="descricao-video">
+        <h2> RESGATAR, EDUCAR, AMAR, CUIDAR E HUMANIZAR </h2>
+    </section>
 
-  <!-- ===== CONTATO ===== -->
-  <section id="contato" class="fade-in-delay">
-    <h2>Entre em Contato</h2>
-    <p>Quer participar ou apoiar o projeto? Fale conosco!</p>
-    <form>
-      <input type="text" placeholder="Seu nome" required>
-      <br />
-      <input type="email" placeholder="Seu e-mail" required>
-      <br />
-      <textarea placeholder="Sua mensagem" rows="4" required></textarea>
-      <br />
-      <button class="btn">Enviar Mensagem</button>
-    </form>
-  </section>
+    <section class="servicos" id="servicos">
+        <h2> Banco de Horas </h2>
 
-  <!-- ===== RODAPÉ ===== -->
-  <footer class="fade-in-delay">
-    <p>&copy; 2025 REACH - Resgatar, Educar, Amar, Cuidar e Humanizar.</p>
-    <p><a href="#inicio">Voltar ao topo ↑</a></p>
-  </footer>
-</body>
-</html>
+        <div class="servicos-container">
+
+            <div class="servicos-card">
+                <img src="img/servicos/habilidade.png" alt="Troca de habilidade" class="img-card">
+                <div class="card-body">
+                    <h3 class="card-title">
+                        <i class="bi bi-person-heart"></i> Ofereça Seu Tempo
+                    </h3>
+                    <p class="card-descricao">
+                        Compartilhe suas habilidades (aulas de reforço, jardinagem, pequenos reparos) e acumule horas de crédito no banco.
+                    </p>
+                    <ul class="card-list">
+                        <li class="card-item">
+                            <i class="bi bi-alarm"></i> 1h Oferecida = 1h Recebida
+                        </li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="servicos-card">
+                <img src="img/servicos/solicitar.png" alt="Solicitação de ajuda" class="img-card">
+                <div class="card-body">
+                    <h3 class="card-title">
+                        <i class="bi bi-search"></i> Solicite Ajuda
+                    </h3>
+                    <p class="card-descricao">
+                        Está precisando de ajuda? Use suas horas de crédito para solicitar serviços de outros membros da comunidade.
+                    </p>
+                    <ul class="card-list">
+                        <li class="card-item">
+                            <i class="bi bi-cash-stack"></i> Zero Barreira Financeira
+                        </li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="servicos-card">
+                <img src="img/servicos/impacto.png" alt="Fortalecimento da comunidade" class="img-card">
+                <div class="card-body">
+                    <h3 class="card-title">
+                        <i class="bi bi-lightbulb-fill"></i> Fortaleça a Comunidade
+                    </h3>
+                    <p class="card-descricao">
+                        Nosso objetivo é fortalecer os laços sociais, promovendo colaboração, solidariedade e igualdade entre os vizinhos.
+                    </p>
+                    <ul class="card-list">
+                        <li class="card-item">
+                            <i class="bi bi-person-circle"></i> Conecte-se com seus vizinhos
+                        </li>
+                    </ul>
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+    <section class="sobre" id="sobre">
+        <h2> Sobre o Projeto REACH </h2>
+        <p>O **REACH** é mais que um site; é uma iniciativa de solidariedade para a comunidade. Nossa missão é desenvolver um sistema de **Banco de Tempo** onde o tempo dedicado é a única moeda. Isso garante que todos tenham acesso à ajuda que precisam, independentemente de sua situação financeira.</p>
+
+        <div class="accordion-container">
+            <div class="accordion-item">
+                <h3 class="accordion-header">
+                    Objetivos <i class="bi

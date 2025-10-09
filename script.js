@@ -1,152 +1,153 @@
-// =============================================================
-// ARQUIVO: script.js
-// FUNÇÕES ESSENCIAIS PARA O REACH - BANCO DE TEMPO
-// =============================================================
-
-// -------------------------------------------------------------
-// 1. Controle do Menu de Navegação (para mobile)
-// Embora a versão CSS inicial não tenha menu hambúrguer, é bom 
-// já preparar a função de toggle para quando o layout responsivo
-// for implementado.
-// -------------------------------------------------------------
-function toggleMobileMenu() {
-    const navUl = document.querySelector('nav ul');
-    if (navUl) {
-        navUl.classList.toggle('active');
-    }
-}
-// Exemplo de como você linkaria isso a um botão de menu no HTML:
-// document.querySelector('.menu-icon').addEventListener('click', toggleMobileMenu);
-
-
-// -------------------------------------------------------------
-// 2. Simulação de Login (Apenas para demonstração)
-// Em um sistema real, essa função faria uma requisição para o servidor.
-// -------------------------------------------------------------
-function handleLogin(event) {
-    // Impede o envio padrão do formulário (que recarregaria a página)
-    event.preventDefault(); 
-    
-    // Obter dados do formulário (assumindo que você tem campos 'username' e 'password')
-    const username = document.getElementById('username').value;
-    const password = document.getElementById('password').value;
-
-    if (username && password) {
-        // Simulação de verificação
-        if (username === 'teste@reach.com' && password === '12345') {
-            alert('Login realizado com sucesso! Bem-vindo(a) ao REACH.');
-            // Redirecionar para a área do usuário (Perfil/Dashboard)
-            window.location.href = 'dashboard.html'; 
-        } else {
-            alert('Usuário ou senha incorretos. Tente novamente.');
-        }
-    } else {
-        alert('Por favor, preencha todos os campos.');
-    }
-}
-// Para usar: Adicione um listener ao formulário de login (ex: no arquivo login.html)
-// document.getElementById('login-form').addEventListener('submit', handleLogin);
-
-
-// -------------------------------------------------------------
-// 3. Simulação do Banco de Horas (Sistema de Créditos)
-// Usando localStorage para simular o armazenamento do saldo.
-// -------------------------------------------------------------
-const STORAGE_KEY_HOURS = 'reach_user_hours_balance';
-
-// Função para carregar o saldo do usuário
-function loadHoursBalance() {
-    const hours = localStorage.getItem(STORAGE_KEY_HOURS);
-    // Retorna 5 horas como saldo inicial se não houver registro
-    return hours ? parseInt(hours) : 5; 
-}
-
-// Função para atualizar e salvar o saldo
-function updateHoursBalance(amount) {
-    let currentHours = loadHoursBalance();
-    currentHours += amount; // Adiciona ou subtrai o tempo
-    
-    // Garante que o saldo não seja negativo (opcional, dependendo da regra do negócio)
-    if (currentHours < 0) {
-        alert("Saldo de horas insuficiente para esta transação.");
-        return loadHoursBalance();
-    }
-
-    localStorage.setItem(STORAGE_KEY_HOURS, currentHours);
-    return currentHours;
-}
-
-// Exemplo de uso: Atualiza o saldo na interface (em uma dashboard, por exemplo)
-function displayHoursBalance() {
-    const balanceElement = document.getElementById('hours-balance-display');
-    if (balanceElement) {
-        balanceElement.textContent = loadHoursBalance() + ' Horas';
-    }
-}
-
-// Exemplo de transação: Usuário ofereceu 2 horas de serviço (recebe crédito)
-function creditHours(hours) {
-    const newBalance = updateHoursBalance(hours);
-    alert(`Crédito de ${hours} horas recebido! Novo saldo: ${newBalance} horas.`);
-    displayHoursBalance();
-}
-
-// Exemplo de transação: Usuário solicitou 1 hora de serviço (gasta crédito)
-function debitHours(hours) {
-    const newBalance = updateHoursBalance(-hours);
-    if (newBalance !== loadHoursBalance()) { // Se a transação foi bem-sucedida (não deu saldo negativo)
-         alert(`Débito de ${hours} horas. Novo saldo: ${newBalance} horas.`);
-    }
-    displayHoursBalance();
-}
-
-// -------------------------------------------------------------
-// 4. Validação Básica do Formulário de Contato
-// -------------------------------------------------------------
-function validateContactForm(event) {
-    // Impede o envio padrão
-    event.preventDefault(); 
-
-    const nome = document.getElementById('nome').value.trim();
-    const email = document.getElementById('email').value.trim();
-    const mensagem = document.getElementById('mensagem').value.trim();
-
-    if (nome === '' || email === '' || mensagem === '') {
-        alert('Por favor, preencha todos os campos do formulário.');
-        return false;
-    }
-    
-    // Validação básica de email
-    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-    if (!emailRegex.test(email)) {
-        alert('Por favor, insira um endereço de e-mail válido.');
-        return false;
-    }
-
-    // Se tudo estiver OK, simula o envio
-    alert('Mensagem enviada com sucesso! A equipe REACH entrará em contato em breve.');
-    // Limpar o formulário (opcional)
-    document.querySelector('.contact-form').reset();
-    return true;
-}
-
-
-// -------------------------------------------------------------
-// Inicialização do Site
-// Adiciona os event listeners principais quando a página é carregada
-// -------------------------------------------------------------
 document.addEventListener('DOMContentLoaded', () => {
-    // 1. Adiciona o listener para o formulário de contato
-    const contactForm = document.querySelector('.contact-form');
-    if (contactForm) {
-        contactForm.addEventListener('submit', validateContactForm);
+    const toggleTheme = document.getElementById("toggleTheme");
+    const rootHtml = document.documentElement;
+    const accordionHeaders = document.querySelectorAll(".accordion-header");
+    const menuLinks = document.querySelectorAll(".menu-link");
+    const menuHamburger = document.getElementById('menuHamburger');
+    const menuMobile = document.getElementById('menuMobile');
+    const icon = menuHamburger?.querySelector('i');
+    const telefoneInput = document.getElementById("telefone");
+
+    // --- 1. Alternar tema (claro/escuro) ---
+    function changeTheme() {
+        const currentTheme = rootHtml.getAttribute("data-theme");
+        const isDark = currentTheme === "dark";
+        rootHtml.setAttribute("data-theme", isDark ? "light" : "dark");
+        
+        // Alterna o ícone: Sol (para mudar para claro) | Lua (para mudar para escuro)
+        if (toggleTheme) {
+            toggleTheme.classList.toggle("bi-sun", !isDark);
+            toggleTheme.classList.toggle("bi-moon-stars", isDark);
+        }
     }
 
-    // 2. Exibe o saldo inicial (se a página tiver o elemento)
-    displayHoursBalance(); 
+    if (toggleTheme) {
+        // Inicializa o ícone correto baseado no tema atual
+        const currentTheme = rootHtml.getAttribute("data-theme");
+        if (currentTheme === "dark") {
+            toggleTheme.classList.add("bi-sun"); // Mostra o sol para mudar para claro
+        } else {
+            toggleTheme.classList.add("bi-moon-stars"); // Mostra a lua para mudar para escuro
+        }
+        
+        toggleTheme.addEventListener("click", changeTheme);
+    }
+
+    // --- 2. Acordeões (Seção "Sobre") ---
+    accordionHeaders.forEach(header => {
+        header.addEventListener("click", () => {
+            const accordionItem = header.parentElement;
+            const content = header.nextElementSibling;
+            
+            // Toggle de classe 'active'
+            accordionItem.classList.toggle("active");
+            
+            // Ajusta a altura máxima para animar a abertura/fechamento
+            if (accordionItem.classList.contains("active")) {
+                content.style.maxHeight = content.scrollHeight + "px";
+            } else {
+                content.style.maxHeight = "0";
+            }
+        });
+    });
+
+    // --- 3. Alternar menu mobile e ícone ---
+    function closeMenu() {
+        if (menuMobile) menuMobile.classList.remove('active');
+        if (icon) {
+            icon.classList.remove('bi-x-lg');
+            icon.classList.add('bi-list');
+        }
+    }
     
-    // *Para testes rápidos do Banco de Horas no console:*
-    // console.log('Saldo inicial:', loadHoursBalance());
-    // creditHours(3); // Testa o crédito
-    // debitHours(1);  // Testa o débito
+    function toggleMenu() {
+        if (!menuMobile) return;
+        
+        const isOpen = menuMobile.classList.toggle('active');
+        if (icon) {
+            icon.classList.toggle('bi-list', !isOpen);
+            icon.classList.toggle('bi-x-lg', isOpen);
+        }
+    }
+
+    if (menuHamburger) {
+        menuHamburger.addEventListener('click', toggleMenu);
+    }
+
+    // Fecha o menu mobile ao clicar no link
+    menuLinks.forEach(item => {
+        item.addEventListener("click", () => {
+            // Desativa todos os links ativos
+            menuLinks.forEach(i => i.classList.remove("active"));
+            // Ativa o link clicado (se você quiser manter o estado de link ativo)
+            item.classList.add("active");
+
+            // Fecha o menu mobile
+            if (menuMobile?.classList.contains('active')) {
+                closeMenu();
+            }
+        });
+    });
+    
+    // --- 4. Máscara do telefone ---
+    if (telefoneInput) {
+        telefoneInput.addEventListener("input", (e) => {
+            let input = e.target.value.replace(/\D/g, ""); // Remove tudo que não é dígito
+            if (input.length > 11) input = input.slice(0, 11);
+
+            let formatted = "";
+            if (input.length > 0) formatted += "(" + input.slice(0, 2);
+            if (input.length >= 3) formatted += ") " + input.slice(2, 7);
+            if (input.length >= 8) formatted += "-" + input.slice(7, 11);
+
+            e.target.value = formatted;
+        });
+    }
+
+    // --- 5. Validação e envio do formulário (Simulação) ---
+    const form = document.querySelector(".form-contato");
+
+    if (form) {
+        form.addEventListener("submit", async function (event) {
+            event.preventDefault(); // Impede a atualização da página
+
+            // Validação de telefone
+            const telefoneValor = telefoneInput?.value.replace(/\D/g, "");
+            if (telefoneInput && (!telefoneValor || telefoneValor.length !== 11)) {
+                alert("Por favor, insira um telefone válido com DDD e 9 dígitos (11 dígitos no total).");
+                telefoneInput.focus();
+                return;
+            }
+
+            // Simulação de envio
+            // REMOVA ESTE TRECHO DE CÓDIGO SE VOCÊ FOR USAR UM SERVIÇO DE BACKEND REAL
+            alert("Mensagem do REACH enviada com sucesso! Agradecemos seu contato.");
+            form.reset();
+            // FIM DA SIMULAÇÃO
+            
+            /*
+            // TRECHO PARA ENVIO REAL (Se você tiver um backend/service como FormSubmit/Netlify Forms)
+            const formData = new FormData(form);
+            const action = form.getAttribute("action");
+
+            try {
+                const response = await fetch(action, {
+                    method: "POST",
+                    body: formData,
+                    headers: { "Accept": "application/json" }
+                });
+
+                if (response.ok) {
+                    alert("Mensagem enviada com sucesso!");
+                    form.reset();
+                } else {
+                    alert("Erro ao enviar a mensagem. Tente novamente.");
+                }
+
+            } catch (error) {
+                alert("Erro de conexão. Verifique sua internet.");
+            }
+            */
+        });
+    }
 });
