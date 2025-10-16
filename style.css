@@ -3,21 +3,21 @@
 /* Cores Padrão (Tema Escuro) */
 :root,
 :root[data-theme='dark'] {
-    --cor-primaria: #8a2be2; /* Roxo principal */
-    --cor-secundaria: #ff69b4; /* Rosa para detalhes/botões */
-    --cor-fundo: #12121f; /* Fundo escuro */
+    --cor-primaria: #f3278d; /* Roxo principal */
+    --cor-secundaria: #f3278d; /* Rosa para detalhes/botões */
+    --cor-fundo: #0c0c3d; /* Fundo escuro */
     --cor-texto: #e9e9e9; /* Texto claro */
-    --cor-texto-principal: #8a2be2; /* Cor destacada para títulos */
-    --cor-menu-fundo: #1f1f33; /* Fundo do menu/header */
+    --cor-texto-principal: #f3278d; /* Cor destacada para títulos */
+    --cor-menu-fundo: #090920; /* Fundo do menu/header */
     --cor-borda: rgba(138, 43, 226, 0.4); /* Borda roxa sutil */
-    --cor-card-fundo: #1f1f33; /* Fundo do card */
+    --cor-card-fundo: #0c0c3d; /* Fundo do card */
 }
 
 /* Tema Claro */
 :root[data-theme='light'] {
     --cor-primaria: #8a2be2;
     --cor-secundaria: #ff69b4;
-    --cor-fundo: #f0f0f5; /* Fundo claro */
+    --cor-fundo: #992393; /* Fundo claro */
     --cor-texto: #333333; /* Texto escuro */
     --cor-texto-principal: #8a2be2;
     --cor-menu-fundo: #ffffff;
@@ -216,7 +216,7 @@ h2 {
     text-transform: uppercase;
     font-weight: bold;
     text-align: center;
-    transition: background 0.3s, color 0.3s;
+    transition: 0.3s, color 0.3s;
 }
 
 .btn-principal {
