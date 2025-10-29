@@ -1,248 +1,142 @@
 <!DOCTYPE html>
-<html lang="pt-br" data-theme="dark">
-
+<html lang="pt-BR">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title> Isabelly Gomes - Portfolio </title>
-    <!-- Bootstrap Icons -->
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.13.1/font/bootstrap-icons.min.css">
-
-    <!-- CSS Externo -->
-     <link rel="stylesheet" href="style.css">
-
+    <title>REACH - Banco de Tempo Comunitário</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
 </head>
-
 <body>
 
-    <header> <!-- Cabeçalho -->
-        <nav class="menu-desktop"> <!-- Menu Desktop -->
-            <ul class="menu menu-principal">
-
-                <li class="menu-item"> 
-
-                    <a href= "" class="menu-link">
-                        <span class="menu-text">Home</span>
-                    </a>
-                </li>
-                
-                <li class="menu-item"> 
-                    <a href="" class="menu-link">
-                        <span class="menu-text"> Serviços </span>
-                    </a>
-                </li>
-                <li class="menu-item"> 
-                    <a href="" class="menu-link">
-                        <span class="menu-text"> Sobre </span>
-                    </a>
-                </li>
-                <li class="menu-item"> 
-                    <a href="" class="menu-link">
-                        <span class="menu-text"> Contatos </span>
-                    </a>
-                </li>
-            </ul>
-        </nav>
-
-        <!-- LOGO -->
-        <div class="header-logo">
-            <a href="">
-                <img src="img/logo.png" alt="" class="logo">
-
-            </a>
-
+    <header class="header">
+        <div class="container">
+            <h1 class="logo">REACH</h1>
+            <nav class="nav">
+                <a href="#como-funciona">Como Funciona</a>
+                <a href="#impacto">Nosso Impacto</a>
+                <a href="#" class="btn-login"><i class="fas fa-sign-in-alt"></i> Login</a>
+                <a href="#" class="btn-cadastro"><i class="fas fa-user-plus"></i> Cadastro</a>
+            </nav>
         </div>
-
-        <!-- Trocar Cor Tema // Shift + ALT + A -->
-        <div class="header-toggle">
-            <!-- Icone SOL -->
-            <i class="bi bi-sun" id="toggleTheme"></i>
-
-            <button id="menuHamburger" class="btn-menu-mobile">
-                <!-- Botão Mobile -->
-            <i class="bi bi-list"></i>
-
-            </button>
-
-
-            
-        </div>
-
     </header>
 
-    <!-- Estrutura Menu Mobile -->
-    <nav class="menu-mobile menu menu-principal" id="menuMobile">
-        <ul class="menu-list">
-            <li class="menu-item">
-                <a href="" class="menu-link"> 
-                    <span class="menu-text"> Home </span>
-                </a>
-            </li>
-            
-            <li class="menu-item">
-                <a href="" class="menu-link">
-                   <span class="menu-text"> Serviços </span> 
-                </a>
-            </li>
-
-            <li class="menu-item">
-                <a href="" class="menu-link">
-                   <span class="menu-text"> Sobre </span> 
-                </a>
-            </li>
-
-            <li class="menu-item">
-                <a href="" class="menu-link">
-                   <span class="menu-text"> Contatos </span> 
-                </a>
-            </li>
-
-        </ul>
-    </nav>
-    <main id="home">
-        <!-- seçao principal -->
-        <section class="main-content">
-            <!-- titulo  principal -->
-             <h1> Sua melhor versão começa aqui. </h1>
-             <p> IG é o lugar para você treinar com motivação, saúde e resultados. Estrutura completa, treinos personalizados e uma comunidade que apoia sua evolução.</p>
-
-             <ul class="menu redes-sociais">
-                <li>
-                     <a href="https://instagram.com/euisaagomess" class="menu-link" target="_blank"> <!-- blank abrir outra janela do navegador -->
-                        <i class="bi bi-instagram"></i>
-                    </a> 
-            </li>
-
-            <li>
-                <a href="https://wa.me/5511965123438" class="" target="_blank">
-                    <i class="bi bi-whatsapp"></i>
-                </a>
-            </li>
-
-             </ul>
-
+    <main>
+        <section class="hero">
+            <div class="container">
+                <div class="hero-content">
+                    <h2>Tempo é a Nossa Moeda. Solidariedade é o Nosso Tesouro.</h2>
+                    <p>REACH: Resgatar, Educar, Amar, Cuidar e Humanizar. Conectamos quem precisa de ajuda com quem pode ajudar, usando horas de colaboração em vez de dinheiro.</p>
+                    <div class="hero-actions">
+                        <a href="#" class="btn-primary"><i class="fas fa-handshake"></i> Oferecer Ajuda</a>
+                        <a href="#" class="btn-secondary"><i class="fas fa-question-circle"></i> Pedir Ajuda</a>
+                    </div>
+                </div>
+                <div class="hero-image">
+                    <i class="fas fa-users-cog fa-9x"></i>
+                </div>
+            </div>
         </section>
 
-        <div class= "video">
-          <img src="img/serviços/entrada-ig.png" alt="">
-        </div>
+        <section id="como-funciona" class="section">
+            <div class="container">
+                <h3><i class="fas fa-clock"></i> Como Funciona o Banco de Tempo?</h3>
+                <div class="steps-grid">
+                    <div class="step-card">
+                        <i class="fas fa-user-check fa-3x"></i>
+                        <h4>1. Cadastre-se</h4>
+                        <p>Crie seu perfil e liste as habilidades que você pode oferecer (aulas, costura, jardinagem).</p>
+                    </div>
+                    <div class="step-card">
+                        <i class="fas fa-exchange-alt fa-3x"></i>
+                        <h4>2. Ofereça Tempo</h4>
+                        <p>Ajude um vizinho. Para cada 1 hora que você oferece, você recebe 1 crédito de hora.</p>
+                    </div>
+                    <div class="step-card">
+                        <i class="fas fa-hand-holding-heart fa-3x"></i>
+                        <h4>3. Use Seu Crédito</h4>
+                        <p>Use seus créditos de hora para solicitar a ajuda de outro membro da comunidade.</p>
+                    </div>
+                    <div class="step-card">
+                        <i class="fas fa-chart-line fa-3x"></i>
+                        <h4>4. Fortaleça a Comunidade</h4>
+                        <p>Crie laços e faça parte de um movimento de colaboração e solidariedade mútua.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
 
+        <section class="section section-dark">
+            <div class="container">
+                <h3><i class="fas fa-bullseye"></i> REACH é para Todos</h3>
+                <p class="subtitle">Conectamos as necessidades com as habilidades de nossa comunidade.</p>
+
+                <div class="advantages-grid">
+                    <div class="advantage-item">
+                        <i class="fas fa-wallet fa-2x"></i>
+                        <h4>Zero Custo</h4>
+                        <p>Acesse serviços sem a barreira do dinheiro. A moeda é a solidariedade e o tempo.</p>
+                    </div>
+                    <div class="advantage-item">
+                        <i class="fas fa-child fa-2x"></i>
+                        <h4>Estudantes</h4>
+                        <p>Troque reforço escolar por outros serviços, como consertos ou aulas de culinária.</p>
+                    </div>
+                    <div class="advantage-item">
+                        <i class="fas fa-wheelchair fa-2x"></i>
+                        <h4>Idosos</h4>
+                        <p>Encontre ajuda em tarefas como pequenas reformas, mercado ou companhia.</p>
+                    </div>
+                    <div class="advantage-item">
+                        <i class="fas fa-hands-helping fa-2x"></i>
+                        <h4>Voluntários</h4>
+                        <p>Dê um propósito às suas habilidades e ganhe créditos para usar quando precisar.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="impacto" class="section">
+            <div class="container">
+                <h3><i class="fas fa-medal"></i> Nosso Impacto e Ranking Solidário</h3>
+                <div class="impacto-flex">
+                    <div class="impacto-stats">
+                        <h4>Resultados Alcançados (Simulados)</h4>
+                        <p><i class="fas fa-hourglass-half"></i> **1.250 Horas** de serviços trocados!</p>
+                        <p><i class="fas fa-users"></i> **340 Membros** ativos na comunidade.</p>
+                        <p><i class="fas fa-tools"></i> **92 Tipos** diferentes de serviços oferecidos.</p>
+                    </div>
+                    <div class="ranking-preview">
+                        <h4>Membros Destaque do Mês</h4>
+                        <ul>
+                            <li><i class="fas fa-trophy"></i> 🥇 Maria S.: 45 horas oferecidas</li>
+                            <li><i class="fas fa-star"></i> 🥈 João P.: 32 horas oferecidas</li>
+                            <li><i class="fas fa-heart"></i> 🥉 Ana L.: 28 horas oferecidas</li>
+                        </ul>
+                        <a href="#" class="btn-secondary">Ver Ranking Completo</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="cta">
+            <div class="container">
+                <h2>Faça Parte do REACH. Sua Hora Vale Ouro!</h2>
+                <a href="#" class="btn-primary btn-large">Quero me Cadastrar Agora!</a>
+            </div>
+        </section>
     </main>
 
-    <section class="descricao-video">
-        <h2> O melhor espaço para você cuidar do corpo e da mente! </h2>
-    </section>
-
-    <!-- Serviços -->
-    <section class="serviços" id="serviços">
-        <h2> Serviços </h2>
-
-        <div class="servicos-container">
-
-            <!-- SERVIÇOS 1  -->
-            <div class="servicos-card">
-                <img src="img/serviços/personal.png" alt= "Personal trainer profissional da IG Fitness, vestindo camiseta roxa, assiste e orienta uma aluna durante um agachamento. A academia moderna exibe o logo IG Fitness com detalhes e iluminação neon em roxo, destacando a oferta de acompanhamento personalizado por nossa equipe exclusivamente feminina."  class=" img-card">
-
-                <div class="card-body">
-                    <h3 class="card-title">
-                        Personal trainer 
-                    </h3>
-
-                    <p class="card-descricao">
-                       Na IG Fitness, nossa equipe de profissionais é exclusivamente feminina, oferecendo o melhor suporte e acompanhamento para você atingir todos os seus objetivos de treino.
-                    </p>
-
-                    <ul class="card-list">
-                        <li class="card-item">
-                           <i class="bi bi-patch-check-fill"></i>
-                            Acompanhamento Personalizado
-                        </li>
-
-                    </ul>
-                </div>
+    <footer class="footer">
+        <div class="container">
+            <p>&copy; 2025 REACH - Projeto Integrador. Tempo é a nossa Moeda.</p>
+            <div class="social-links">
+                <a href="#"><i class="fab fa-facebook-f"></i></a>
+                <a href="#"><i class="fab fa-instagram"></i></a>
             </div>
-            <!-- fim SERVIÇOS 1 -->
-
-            <!-- serviços 2 -->
-            <div class="servicos-card reverse-card">
-                <img src="img/serviços/sala-de-dança.png" alt= "Grupo de sete mulheres em uma aula de ginástica em uma academia moderna com iluminação neon roxa. As participantes estão uniformizadas com tops e calças pretas, realizando exercícios de agachamento em posição de espera ou movimento. O chão é de madeira clara, e há grandes espelhos refletindo a turma. Uma parede de tijolos ao fundo tem a frase 'DANCE. SWEAT. REPEAT.' em neon roxo. A cena transmite energia e foco no fitness feminino."  class=" img-card">
-
-                <div class="card-body">
-                    <h3 class="card-title">
-                        Aulas de Dança
-                    </h3>
-
-                    <p class="card-descricao">
-                       Nossas aulas de Dança, Zumba e Ritmos transformam o treino em festa.
-                     Venha queimar calorias, melhorar a coordenação e se conectar com nossa comunidade feminina. A música está esperando por você!
-                    </p>
-
-                    <ul class="card-list">
-                        <li class="card-item">
-                            <i class="bi bi-patch-check-fill"></i>
-                            Aulas de Ritmos
-                        </li>
-                    </ul>
-                </div>
-            </div>
-            <!-- fim serviços 2 --> 
-             
-            <!-- serviços 3 -->
-            <div class="servicos-card">
-                <img src="img/serviços/saladelutas.png" alt= "Uma sala de combate moderna e escura na academia IG Fitness, iluminada por neon roxo e rosa vibrante. Sacos de pancada pretos pendem do teto, alguns refletidos em um grande espelho na parede esquerda. Ao fundo, uma ampla janela oferece uma vista panorâmica de uma paisagem urbana com prédios altos sob um céu claro. A parede direita apresenta tijolos escuros com um letreiro de neon roxo que diz 'IG FITNESS COMBAT'. O chão é de borracha preta, e as luzes de neon atravessam o teto e as paredes, criando um ambiente energético e estiloso para treinos."  class=" img-card">
-
-                <div class="card-body">
-                    <h3 class="card-title">
-                        Sala de Lutas IG Fitness
-                    </h3>
-
-                    <p class="card-descricao">
-                      IG COMBAT: Lutas. Boxe. Muay Thai
-                    </p>
-
-                    <ul class="card-list">
-                        <li class="card-item">
-                            <i class="bi bi-patch-check-fill"></i>
-                            IG Fitness Combat
-                        </li>
-                    </ul>
-                </div>
-            </div>
-            <!-- fim serviços 3 -->
-
-            <section class="sobre" id="sobre">
-                <h2> Sobre a IG </h2>
-            </section>
-
-            <!-- Contato -->
-             <section class="contato" id="contato">
-                <h2> Contato </h2>
-             </section>
-
-             <!-- Roda Pé -->
-             <footer>
-                <p>
-                    &copy; 2025.
-                </p>
-             </footer>
-
-
-
         </div>
-    </section>
- <div vw class="enabled">
-    <div vw-access-button class="active"></div>
-    <div vw-plugin-wrapper>
-      <div class="vw-plugin-top-wrapper"></div>
-    </div>
-  </div>
-  <script src="https://vlibras.gov.br/app/vlibras-plugin.js"></script>
-  <script>
-    new window.VLibras.Widget("https://vlibras.gov.br/app/");
-  </script>
+    </footer>
+
     <script src="script.js"></script>
-
-
 </body>
-
 </html>
