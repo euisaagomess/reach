@@ -1,12 +1,12 @@
 /* RESET BÁSICO E DEFINIÇÃO DE VARIÁVEIS */
 :root {
     /* Paleta de Cores REACH */
-    --cor-principal: #022F40; /* Azul Escuro - Fundo e Headers */
-    --cor-secundaria: #F4D0D0; /* Rosa Claro - Destaque Secundário */
-    --cor-destaque: #00A896; /* Azul Turquesa - Botões e Títulos */
+    --cor-principal: #060f38; /* Azul Escuro - Fundo e Headers */
+    --cor-secundaria: #190760; /* Rosa Claro - Destaque Secundário */
+    --cor-destaque: #f114b6; /* Azul Turquesa - Botões e Títulos */
     --cor-sucesso: #2A9D8F; /* Verde Escuro - Ícones e Positivo */
     --cor-fundo: #F8F9FA; /* Fundo Principal */
-    --cor-texto: #333333; /* Texto Comum */
+    --cor-texto: #fefafa; /* Texto Comum */
     --cor-branco: #FFFFFF;
 
     /* Fontes */
@@ -50,7 +50,7 @@ body {
 .logo {
     font-size: 1.8em;
     font-weight: bold;
-    color: var(--cor-secundaria); /* Logo com Rosa */
+    color: var(--cor-destaque); /* Logo com Rosa */
 }
 
 .nav a {
