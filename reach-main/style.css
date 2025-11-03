@@ -1,0 +1,422 @@
+/* RESET BÁSICO E DEFINIÇÃO DE VARIÁVEIS */
+:root {
+    /* Paleta de Cores REACH */
+    --cor-principal: #022F40; /* Azul Escuro - Fundo e Headers */
+    --cor-secundaria: #F4D0D0; /* Rosa Claro - Destaque Secundário */
+    --cor-destaque: #00A896; /* Azul Turquesa - Botões e Títulos */
+    --cor-sucesso: #2A9D8F; /* Verde Escuro - Ícones e Positivo */
+    --cor-fundo: #F8F9FA; /* Fundo Principal */
+    --cor-texto: #333333; /* Texto Comum */
+    --cor-branco: #FFFFFF;
+
+    /* Fontes */
+    --fonte-principal: 'Arial', sans-serif;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: var(--fonte-principal);
+    line-height: 1.6;
+    color: var(--cor-texto);
+    background-color: var(--cor-fundo);
+    scroll-behavior: smooth;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+/* --- CABEÇALHO/NAVBAR --- */
+.header {
+    background-color: var(--cor-principal);
+    color: var(--cor-branco);
+    padding: 15px 0;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+}
+
+.header .container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logo {
+    font-size: 1.8em;
+    font-weight: bold;
+    color: var(--cor-secundaria); /* Logo com Rosa */
+}
+
+.nav a {
+    color: var(--cor-branco);
+    text-decoration: none;
+    margin-left: 20px;
+    padding: 5px 10px;
+    transition: color 0.3s, background-color 0.3s;
+}
+
+.nav a:hover {
+    color: var(--cor-destaque);
+}
+
+/* Estilo dos Botões na Navbar */
+.btn-login {
+    background-color: transparent;
+    border: 1px solid var(--cor-branco);
+    border-radius: 5px;
+}
+
+.btn-cadastro {
+    background-color: var(--cor-destaque);
+    border-radius: 5px;
+    margin-left: 15px;
+}
+
+.btn-cadastro:hover {
+    background-color: var(--cor-sucesso);
+    color: var(--cor-branco);
+}
+
+/* --- ESTILO GERAL DE BOTÕES --- */
+.btn-primary, .btn-secondary {
+    display: inline-block;
+    padding: 12px 25px;
+    margin: 5px;
+    border-radius: 8px;
+    text-decoration: none;
+    font-weight: bold;
+    transition: background-color 0.3s, transform 0.2s;
+}
+
+.btn-primary {
+    background-color: var(--cor-destaque); /* Azul Turquesa */
+    color: var(--cor-branco);
+    border: 2px solid var(--cor-destaque);
+}
+
+.btn-primary:hover {
+    background-color: var(--cor-sucesso); /* Verde Escuro */
+    border-color: var(--cor-sucesso);
+    transform: translateY(-2px);
+}
+
+.btn-secondary {
+    background-color: transparent;
+    color: var(--cor-principal);
+    border: 2px solid var(--cor-principal);
+}
+
+.btn-secondary:hover {
+    background-color: var(--cor-secundaria); /* Rosa Claro */
+    color: var(--cor-principal);
+    transform: translateY(-2px);
+}
+
+.btn-large {
+    padding: 15px 40px;
+    font-size: 1.1em;
+}
+
+/* --- SEÇÃO HERO --- */
+.hero {
+    background-color: var(--cor-secundaria); /* Fundo Rosa Claro */
+    padding: 80px 0;
+}
+
+.hero .container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.hero-content {
+    max-width: 50%;
+}
+
+.hero-content h2 {
+    font-size: 2.5em;
+    color: var(--cor-principal);
+    margin-bottom: 20px;
+    border-left: 5px solid var(--cor-destaque);
+    padding-left: 15px;
+}
+
+.hero-content p {
+    font-size: 1.1em;
+    margin-bottom: 30px;
+    color: var(--cor-texto);
+}
+
+.hero-image {
+    width: 40%;
+    text-align: center;
+    color: var(--cor-destaque); /* Cor do ícone grande */
+}
+
+/* --- SEÇÕES GERAIS --- */
+.section {
+    padding: 60px 0;
+    text-align: center;
+}
+
+.section-dark {
+    background-color: var(--cor-principal);
+    color: var(--cor-branco);
+}
+
+.section-dark h3, .section-dark .subtitle {
+    color: var(--cor-secundaria); /* Títulos em Rosa no fundo escuro */
+}
+
+h3 {
+    font-size: 2em;
+    margin-bottom: 10px;
+    color: var(--cor-destaque);
+}
+
+.subtitle {
+    font-size: 1.2em;
+    margin-bottom: 40px;
+    display: block;
+}
+
+/* --- GRID DE PASSOS (COMO FUNCIONA) --- */
+.steps-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 30px;
+    margin-top: 30px;
+}
+
+.step-card {
+    background-color: var(--cor-branco);
+    padding: 30px;
+    border-radius: 10px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
+    transition: transform 0.3s;
+}
+
+.step-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+}
+
+.step-card i {
+    color: var(--cor-destaque);
+    margin-bottom: 15px;
+}
+
+.step-card h4 {
+    color: var(--cor-principal);
+    margin-bottom: 10px;
+}
+
+/* --- GRID DE VANTAGENS/PÚBLICO-ALVO --- */
+.advantages-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 30px;
+    margin-top: 30px;
+}
+
+.advantage-item {
+    padding: 20px;
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    border-radius: 8px;
+}
+
+.advantage-item i {
+    color: var(--cor-destaque); /* Ícones em Turquesa */
+    margin-bottom: 10px;
+}
+
+.advantage-item h4 {
+    margin-bottom: 10px;
+}
+
+/* --- SEÇÃO IMPACTO --- */
+.impacto-flex {
+    display: flex;
+    gap: 50px;
+    margin-top: 40px;
+    text-align: left;
+}
+
+.impacto-stats, .ranking-preview {
+    flex: 1;
+    padding: 30px;
+    border-radius: 10px;
+    background-color: var(--cor-branco);
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
+}
+
+.impacto-stats p {
+    font-size: 1.1em;
+    margin: 10px 0;
+    color: var(--cor-principal);
+}
+
+.impacto-stats i {
+    color: var(--cor-sucesso); /* Ícones em Verde */
+    margin-right: 10px;
+}
+
+.ranking-preview ul {
+    list-style: none;
+    margin: 20px 0;
+}
+
+.ranking-preview li {
+    padding: 8px 0;
+    border-bottom: 1px dashed var(--cor-secundaria);
+}
+
+.ranking-preview li i {
+    color: var(--cor-destaque);
+    margin-right: 10px;
+}
+
+/* --- CHAMADA PARA AÇÃO FINAL (CTA) --- */
+.cta {
+    background-color: var(--cor-destaque);
+    color: var(--cor-branco);
+    padding: 60px 0;
+    text-align: center;
+}
+
+.cta h2 {
+    font-size: 2.2em;
+    margin-bottom: 30px;
+    color: var(--cor-principal);
+}
+
+/* --- RODAPÉ --- */
+.footer {
+    background-color: var(--cor-principal);
+    color: var(--cor-secundaria);
+    padding: 20px 0;
+}
+
+.footer .container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.social-links a {
+    color: var(--cor-branco);
+    font-size: 1.2em;
+    margin-left: 15px;
+    transition: color 0.3s;
+}
+
+.social-links a:hover {
+    color: var(--cor-destaque);
+}
+
+/* --- RESPONSIVIDADE BÁSICA --- */
+@media (max-width: 768px) {
+    .header .container {
+        flex-direction: column;
+        text-align: center;
+    }
+    .nav {
+        margin-top: 15px;
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+    .nav a {
+        margin: 5px 10px;
+    }
+    .hero .container {
+        flex-direction: column;
+        text-align: center;
+    }
+    .hero-content, .hero-image {
+        max-width: 100%;
+        width: 100%;
+    }
+    .hero-image {
+        margin-top: 30px;
+    }
+    .hero-content h2 {
+        border-left: none;
+        padding-left: 0;
+    }
+    .impacto-flex {
+        flex-direction: column;
+        gap: 30px;
+    }
+    .footer .container {
+        flex-direction: column;
+    }
+    .footer p {
+        margin-bottom: 10px;
+    }
+}
+
+
+
+
+/*
+ * === CÓDIGOS PARA SCROLL REVEAL ===
+ */
+
+/* 1. Estado Inicial (Escondido) para todos os elementos com a classe 'reveal' */
+.reveal {
+    opacity: 0;
+    /* Define a transição para suavizar a aparição e o movimento */
+    transition: opacity 0.8s ease-out, transform 0.8s ease-out;
+    /* Posição padrão: ligeiramente para baixo */
+    transform: translateY(30px); 
+}
+
+/* 2. Estado Final (Visível) - Adicionado pelo JavaScript */
+.reveal.active {
+    opacity: 1;
+    transform: translateY(0); /* Volta para a posição normal */
+}
+
+/* Variações de Animação */
+
+/* Elementos que virão da esquerda */
+.reveal.from-left {
+    transform: translateX(-50px);
+}
+.reveal.from-left.active {
+    transform: translateX(0);
+}
+
+/* Elementos que virão da direita */
+.reveal.from-right {
+    transform: translateX(50px);
+}
+.reveal.from-right.active {
+    transform: translateX(0);
+}
+
+/* Elementos que virão de baixo (mais pronunciado) */
+.reveal.from-bottom {
+    transform: translateY(50px);
+}
+.reveal.from-bottom.active {
+    transform: translateY(0);
+}
+
+/* Variações de Atraso (Delay) */
+.reveal.delay-1 { 
+    transition-delay: 0.2s; 
+}
+.reveal.delay-2 { 
+    transition-delay: 0.4s; 
+}
+.reveal.delay-3 { 
+    transition-delay: 0.6s; 
+}
