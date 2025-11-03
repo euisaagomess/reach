@@ -107,15 +107,13 @@ body {
 }
 
 .btn-secondary {
-    background-color: transparent;
-    color: var(--cor-principal);
-    border: 2px solid var(--cor-principal);
+    color: var(--cor-destaque);
+    border: 2px solid var(--cor-destaque);
 }
 
 .btn-secondary:hover {
     background-color: var(--cor-secundaria); /* Rosa Claro */
     color: var(--cor-principal);
-    transform: translateY(-2px);
 }
 
 .btn-large {
@@ -141,7 +139,7 @@ body {
 
 .hero-content h2 {
     font-size: 2.5em;
-    color: var(--cor-principal);
+    color: var(--cor-destaque);
     margin-bottom: 20px;
     border-left: 5px solid var(--cor-destaque);
     padding-left: 15px;
