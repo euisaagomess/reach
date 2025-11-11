@@ -3,10 +3,11 @@
     /* Paleta de Cores REACH */
     --cor-principal: #060f38; /* Azul Escuro - Fundo e Headers */
     --cor-secundaria: #190760; /* Rosa Claro - Destaque Secundário */
-    --cor-destaque: #f114b6; /* Azul Turquesa - Botões e Títulos */
-    --cor-sucesso: #2A9D8F; /* Verde Escuro - Ícones e Positivo */
-    --cor-fundo: #F8F9FA; /* Fundo Principal */
-    --cor-texto: #fefafa; /* Texto Comum */
+    --cor-secundaria-2: white;
+    --cor-destaque: #ff00c8; /* Azul Turquesa - Botões e Títulos */
+    --cor-sucesso: #a10df7; /* Verde Escuro - Ícones e Positivo */
+    --cor-fundo: #4e1066; /* Fundo Principal */
+    --cor-texto: #fdfcfc; /* Texto Comum */
     --cor-branco: #FFFFFF;
 
     /* Fontes */
@@ -33,6 +34,7 @@ body {
     padding: 0 20px;
 }
 
+
 /* --- CABEÇALHO/NAVBAR --- */
 .header {
     background-color: var(--cor-principal);
@@ -55,6 +57,7 @@ body {
 
 .nav a {
     color: var(--cor-branco);
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
     text-decoration: none;
     margin-left: 20px;
     padding: 5px 10px;
@@ -67,21 +70,11 @@ body {
 
 /* Estilo dos Botões na Navbar */
 .btn-login {
-    background-color: transparent;
-    border: 1px solid var(--cor-branco);
+    background-color: rgb(121, 5, 150);
     border-radius: 5px;
 }
 
-.btn-cadastro {
-    background-color: var(--cor-destaque);
-    border-radius: 5px;
-    margin-left: 15px;
-}
 
-.btn-cadastro:hover {
-    background-color: var(--cor-sucesso);
-    color: var(--cor-branco);
-}
 
 /* --- ESTILO GERAL DE BOTÕES --- */
 .btn-primary, .btn-secondary {
@@ -108,12 +101,12 @@ body {
 
 .btn-secondary {
     color: var(--cor-destaque);
-    border: 2px solid var(--cor-destaque);
+    border: 2px solid;
 }
 
 .btn-secondary:hover {
     background-color: var(--cor-secundaria); /* Rosa Claro */
-    color: var(--cor-principal);
+    color: white;
 }
 
 .btn-large {
@@ -169,8 +162,9 @@ body {
 }
 
 .section-dark h3, .section-dark .subtitle {
-    color: var(--cor-secundaria); /* Títulos em Rosa no fundo escuro */
+    color: var(--cor-secundaria-2); /* Títulos em Rosa no fundo escuro */
 }
+
 
 h3 {
     font-size: 2em;
@@ -198,6 +192,10 @@ h3 {
     border-radius: 10px;
     box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
     transition: transform 0.3s;
+}
+
+.step-card p {
+    color: rgb(0, 0, 0);
 }
 
 .step-card:hover {
@@ -257,32 +255,34 @@ h3 {
 .impacto-stats p {
     font-size: 1.1em;
     margin: 10px 0;
-    color: var(--cor-principal);
+    color: rgb(0, 0, 0);
 }
 
 .impacto-stats i {
-    color: var(--cor-sucesso); /* Ícones em Verde */
+    color: purple; /* Ícones em Verde */
     margin-right: 10px;
 }
 
 .ranking-preview ul {
     list-style: none;
     margin: 20px 0;
+    color: rgb(59, 7, 70);
 }
 
 .ranking-preview li {
     padding: 8px 0;
-    border-bottom: 1px dashed var(--cor-secundaria);
+    border-bottom: 1px dashed;
+    color: rgb(53, 4, 53);
 }
 
 .ranking-preview li i {
-    color: var(--cor-destaque);
+    color:purple;
     margin-right: 10px;
 }
 
 /* --- CHAMADA PARA AÇÃO FINAL (CTA) --- */
 .cta {
-    background-color: var(--cor-destaque);
+    background-color: rgb(10, 10, 104);
     color: var(--cor-branco);
     padding: 60px 0;
     text-align: center;
@@ -291,13 +291,13 @@ h3 {
 .cta h2 {
     font-size: 2.2em;
     margin-bottom: 30px;
-    color: var(--cor-principal);
+    color: white;
 }
 
 /* --- RODAPÉ --- */
 .footer {
     background-color: var(--cor-principal);
-    color: var(--cor-secundaria);
+    color: rgb(112, 108, 108);
     padding: 20px 0;
 }
 
